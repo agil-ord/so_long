@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 13:56:01 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 18:18:09 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:46:19 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_textures {
 	mlx_texture_t	*meat;
 	mlx_texture_t	*luffy;
 	mlx_texture_t	*exit;
+	mlx_texture_t	*exit_2;
 }				t_textures;
 
 typedef struct s_images {
@@ -43,6 +44,7 @@ typedef struct s_images {
 	mlx_image_t	*meat;
 	mlx_image_t	*luffy;
 	mlx_image_t	*exit;
+	mlx_image_t	*exit_2;
 }				t_images;
 
 typedef struct s_player {
@@ -63,6 +65,7 @@ typedef struct s_game
 	int					n_meat;
 	int					n_exit;
 	int					n_luffy;
+	char				**map_2;
 }	t_game;
 
 //
@@ -109,6 +112,14 @@ int			ft_different_c(char **map);
 //
 int			ft_min_tiles(t_game game);
 
+int			ft_check_path(t_game *game);
+
+void		ft_flood_fill(t_game *game, int x, int y);
+
+int			*ft_start(char **map);
+
+int			ft_path(t_game *game, char *file);
+
 //inicializacion del juego
 
 //
@@ -127,5 +138,7 @@ void		ft_game_init(t_game *game);
 int			ft_argv(char *path_map);
 
 void		ft_free_solong(char **map);
+
+int			ft_check_main(t_game game, char *path);
 
 #endif

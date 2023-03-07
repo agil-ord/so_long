@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:01:16 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 19:41:24 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:40:14 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ft_size_map(t_game *game, char **map)
 	int	i;
 
 	i = 0;
+	game->n_meat = ft_count_meat(game);
 	game->map_width = ft_strlen(map[0]) * 64;
 	while (map[i])
 		i++;

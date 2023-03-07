@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:49:50 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 18:34:58 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:36:09 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,6 @@ void	ft_collect_meat(t_game *game)
 		[game->imag->luffy->instances[0].x / 64] == 'E')
 	{
 		if (game->count_meat == game->n_meat)
-		{
 			mlx_close_window(game->mlx);
-
-		}
 	}
 }

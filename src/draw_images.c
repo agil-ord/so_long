@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:38:57 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 17:37:46 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:39:51 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	get_textures(t_game *game)
 {
 	game->textu = malloc(sizeof(t_textures));
 	game->textu->floor = mlx_load_png("./images/floor.png");
+	game->textu->exit_2 = mlx_load_png("./images/trampilla.png");
 	game->textu->wall = mlx_load_png("./images/wall.png");
 	game->textu->meat = mlx_load_png("./images/meat.png");
 	game->textu->luffy = mlx_load_png("./images/spriteLuffy/luffy-front.png");
@@ -30,11 +31,13 @@ void	get_images(t_game *game)
 	game->imag->meat = mlx_texture_to_image(game->mlx, game->textu->meat);
 	game->imag->luffy = mlx_texture_to_image(game->mlx, game->textu->luffy);
 	game->imag->exit = mlx_texture_to_image(game->mlx, game->textu->exit);
+	game->imag->exit_2 = mlx_texture_to_image(game->mlx, game->textu->exit_2);
 	mlx_delete_texture(game->textu->floor);
 	mlx_delete_texture(game->textu->wall);
 	mlx_delete_texture(game->textu->meat);
 	mlx_delete_texture(game->textu->luffy);
 	mlx_delete_texture(game->textu->exit);
+	mlx_delete_texture(game->textu->exit_2);
 }
 
 int	ft_floor(t_game *game, t_images *imag)
@@ -50,7 +53,7 @@ int	ft_floor(t_game *game, t_images *imag)
 		{
 			mlx_image_to_window(game->mlx, imag->floor, x * 64, y * 64);
 			if (game->map[y][x] == 'E')
-				mlx_image_to_window(game->mlx, imag->exit, x * 64, y * 64);
+				mlx_image_to_window(game->mlx, imag->exit_2, x * 64, y * 64);
 			x++;
 		}
 		y++;
