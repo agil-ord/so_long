@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 13:56:01 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/07 19:46:19 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:45:40 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_game
 	int					count_meat;
 	int					move_count;
 	int					n_meat;
+	int					n_meat2;
 	int					n_exit;
 	int					n_luffy;
 	char				**map_2;
@@ -103,8 +104,6 @@ int			ft_checker_map(char **map);
 int			ft_map_wall(char **map);
 //cheker si es rectangular
 int			ft_map_rectangle(char **map);
-//mapa es cuadrado
-int			ft_map_square(char **map);
 //que no tenga caracteres extraños
 int			ft_different_c(char **map);
 //

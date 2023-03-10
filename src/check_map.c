@@ -6,23 +6,11 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 13:04:31 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/03 12:25:02 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:46:09 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-int	ft_map_square(char **map)
-{
-	size_t	i;
-
-	i = 0;
-	while (map[i])
-		i++;
-	if ((ft_strlen(map[0]) - 1) == i - 1)
-		return (FALSE);
-	return (TRUE);
-}
 
 int	ft_map_rectangle(char **map)
 {
@@ -99,11 +87,6 @@ int	ft_checker_map(char **map)
 	if (ft_different_c(map) == FALSE)
 	{
 		ft_printf("\nError\n map have extrange componets.");
-		return (FALSE);
-	}
-	if (ft_map_square(map) == FALSE)
-	{
-		ft_printf("\nError\n map is square.\n");
 		return (FALSE);
 	}
 	if (ft_map_wall(map) == FALSE)

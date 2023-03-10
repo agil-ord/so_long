@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 16:34:42 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/07 19:50:29 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/08 11:20:25 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_flood_fill(t_game *game, int x, int y)
 	}
 }
 
-int	*ft_start(char **map)
+int	*ft_start(char **map_2)
 {
 	int	x;
 	int	y;
@@ -62,12 +62,12 @@ int	*ft_start(char **map)
 
 	pos = (int *)malloc(sizeof(int) * 2);
 	y = 0;
-	while (map[y])
+	while (map_2[y])
 	{
 		x = 0;
-		while (map[y][x])
+		while (map_2[y][x])
 		{
-			if (map[y][x] == 'P')
+			if (map_2[y][x] == 'P')
 			{
 				pos[0] = x;
 				pos[1] = y;
@@ -84,7 +84,7 @@ int	ft_check_path(t_game *game)
 	int	i;
 	int	j;
 
-	game->n_meat = 0;
+	game->n_meat2 = 0;
 	game->n_exit = 0;
 	game->n_luffy = 0;
 	i = 0;
@@ -98,12 +98,12 @@ int	ft_check_path(t_game *game)
 			else if (game->map_2[i][j] == 'P')
 				game->n_luffy++;
 			else if (game->map_2[i][j] == 'C')
-				game->n_meat++;
+				game->n_meat2++;
 			j++;
 		}
 		i++;
 	}
-	if (game->n_meat != 0 || game->n_exit != 0 || game->n_luffy != 0)
+	if (game->n_meat2 != 0 || game->n_exit != 0 || game->n_luffy != 0)
 		return (FALSE);
 	return (TRUE);
 }
@@ -117,7 +117,8 @@ int	ft_path(t_game *game, char *file)
 	ft_flood_fill(game, pos[0], pos[1]);
 	if (ft_check_path(game) == FALSE)
 	{
-		ft_printf("Error! There is not a valid path\n");
+		ft_printf("\nError!\n There is not a valid path\n");
+		free(pos);
 		ft_free_solong(game->map_2);
 		return (FALSE);
 	}

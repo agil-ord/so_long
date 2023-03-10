@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:04:59 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 18:16:47 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/08 12:33:14 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 
 # include "../../../../a/include/memory_leaks.h"
+
 typedef struct s_list
 {
 	void			*content;

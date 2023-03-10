@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:49:50 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/07 19:36:09 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:30:40 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int	ft_count_meat(t_game *game)
 void	ft_delete_collect(t_game *game)
 {
 	int	i;
+	int	c;
 
+	c = game->n_meat;
 	i = 0;
 	while (i < game->n_meat)
 	{
@@ -47,7 +49,10 @@ void	ft_delete_collect(t_game *game)
 					== game->imag->luffy->instances[0].x))
 			&& game->imag->meat->instances[i].enabled == true)
 		{
+			c--;
 			game->imag->meat->instances[i].enabled = false;
+			// if (c == 0)
+			// 	game->imag->exit_2->instances[i].enabled = false;
 			return ;
 		}
 		i++;
@@ -63,6 +68,8 @@ void	ft_collect_meat(t_game *game)
 		game->map[game->imag->luffy->instances[0].y / 64]
 		[game->imag->luffy->instances[0].x / 64] = '0';
 		game->count_meat++;
+		if (game->count_meat == game->n_meat)
+			game->imag->exit_2->instances[0].enabled = false;
 	}
 	if (game->map[game->imag->luffy->instances[0].y / 64]
 		[game->imag->luffy->instances[0].x / 64] == 'E')

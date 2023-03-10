@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 12:38:57 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/07 19:39:51 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:49:52 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ int	ft_floor(t_game *game, t_images *imag)
 		{
 			mlx_image_to_window(game->mlx, imag->floor, x * 64, y * 64);
 			if (game->map[y][x] == 'E')
+			{
+				mlx_image_to_window(game->mlx, imag->exit, x * 64, y * 64);
 				mlx_image_to_window(game->mlx, imag->exit_2, x * 64, y * 64);
+			}
 			x++;
 		}
 		y++;
