@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:23:19 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/06 18:17:22 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:04:39 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include "../../../../a/include/memory_leaks.h"
+# include "memory_leaks.h"
 
 int		ft_printf(char const	*str, ...);
 void	ft_putchar_printf(char c, int *pt_i);

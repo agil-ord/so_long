@@ -6,11 +6,11 @@
 #    By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 19:28:38 by agil-ord          #+#    #+#              #
-#    Updated: 2023/03/06 18:36:53 by agil-ord         ###   ########.fr        #
+#    Updated: 2023/03/12 20:10:15 by agil-ord         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-INCLUDE = -I ./includes
+INCLUDE = -I ./includes -I ../memory-leaks/include
 
 NAME	= libft.a
 

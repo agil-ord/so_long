@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 13:56:01 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/09 15:45:40 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:11:33 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "ft_printf.h"
 # include "libft.h"
 # include "get_next_line.h"
-# include "../../../a/include/memory_leaks.h"
+# include "memory_leaks.h"
 # include <fcntl.h>
 
 # define BUFF_SIZE 10000

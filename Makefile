@@ -1,4 +1,4 @@
-INCLUDE 	= 	-I ./libft/includes -I ./includes -I ./MLX42/include/MLX42
+INCLUDE 	= 	-I ./libft/includes -I ./includes -I ./MLX42/include/MLX42 -I ./memory-leaks/include
 
 MLX_DIR		=	./MLX42
 
@@ -8,7 +8,7 @@ LIB_MLX		=	-lmlx42 -L${MLX_DIR}
 
 NAME		=	so_long
 
-#MAP		= 	prueba.ber
+DIR_LEAKS	=	./memory-leaks
 
 DIR_SO_LONG = ./src
 
@@ -37,14 +37,17 @@ ifdef DEBUG
 	MAKE += DEBUG=1
 endif
 
-all: ${NAME}
+all: submodules ${NAME}
 
-${NAME}: 			${SRCS}
-		${MAKE} -C ${LIBFT_DIR}
+submodules: 
+	@git submodule update --init
+
+${NAME}: 		submodules	${SRCS}
+		
+		@${MAKE} -C ${DIR_LEAKS}
+		@${MAKE} -C ${LIBFT_DIR}
 		${MAKE} -C ${MLX_DIR}
-#		@cp ${LIBFT_DIR}/libft.a ${NAME}
-#		$(CC) $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-		@${CC} ${CFLAG} ${SRCS} ${LIBFT_DIR}/libft.a ${LIB_GLFW} ${LIB_MLX}  -o ${NAME} -g ../../a/memory_leaks.a
+		@${CC} ${CFLAG} ${SRCS} ${LIBFT_DIR}/libft.a ${LIB_GLFW} ${LIB_MLX}  -o ${NAME} -g ./memory-leaks/memory_leaks.a
 
 clean:	
 		@make clean -C ${LIBFT_DIR} 
@@ -57,4 +60,4 @@ fclean:	clean
 		
 re:	fclean all
 
-.PHONY: all	clean fclean re bonus
+.PHONY: all	clean fclean re
