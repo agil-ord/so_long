@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:49:50 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/08 15:30:40 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:14:36 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void	ft_delete_collect(t_game *game)
 		{
 			c--;
 			game->imag->meat->instances[i].enabled = false;
-			// if (c == 0)
-			// 	game->imag->exit_2->instances[i].enabled = false;
 			return ;
 		}
 		i++;

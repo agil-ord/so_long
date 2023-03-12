@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 15:01:16 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/08 17:08:08 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:18:09 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	**ft_read_map(char *path)
 	if (fd < 0)
 	{
 		free(take_map);
-		ft_printf("\nError \nwith file");
 		return (NULL);
 	}
 	n = read(fd, take_map, BUFF_SIZE);

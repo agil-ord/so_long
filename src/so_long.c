@@ -6,7 +6,7 @@
 /*   By: agil-ord <agil-ord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:30:34 by agil-ord          #+#    #+#             */
-/*   Updated: 2023/03/09 15:45:25 by agil-ord         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:18:27 by agil-ord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_argv(char *path_map)
 		|| path_map[i - 2] != 'b'
 		|| path_map[i - 3] != '.')
 	{
-		ft_printf("Error\n invalid extension map.\n");
+		ft_printf("\nError\ninvalid extension map.\n");
 		return (FALSE);
 	}
 	return (TRUE);
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 			return (255);
 		game.map = ft_read_map(av[1]);
 		if (!game.map)
-			return (255);
+			return (ft_printf("\nError \nwith file\n"), 255);
 		if (ft_checker_map(game.map) == FALSE)
 			return (ft_free_solong(game.map), 255);
 		ft_size_map(&game, game.map);
@@ -77,6 +77,6 @@ int	main(int ac, char **av)
 		ft_game_init(&game);
 		return (0);
 	}
-	ft_printf("\nError, you don't have a map\n");
+	ft_printf("\nError\nyou don't have a map\n");
 	return (255);
 }
